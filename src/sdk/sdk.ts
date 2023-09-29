@@ -52,8 +52,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "0.1.9";
-    sdkVersion = "0.2.1";
-    genVersion = "2.131.1";
+    sdkVersion = "0.3.0";
+    genVersion = "2.139.1";
+    userAgent = "speakeasy-sdk/typescript 0.3.0 2.139.1 0.1.9 via";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -98,9 +99,7 @@ export class Via {
         const headers: RawAxiosRequestHeaders = { ...config?.headers };
         headers["Accept"] = "application/json";
 
-        headers[
-            "user-agent"
-        ] = `speakeasy-sdk/${this.sdkConfiguration.language} ${this.sdkConfiguration.sdkVersion} ${this.sdkConfiguration.genVersion} ${this.sdkConfiguration.openapiDocVersion}`;
+        headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
