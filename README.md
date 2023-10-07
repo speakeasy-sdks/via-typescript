@@ -26,15 +26,16 @@ yarn add https://github.com/speakeasy-sdks/via-typescript
 <!-- Start SDK Example Usage -->
 ```typescript
 import { Via } from "via";
-import { GetUsersResponse } from "via/dist/sdk/models/operations";
 
-const sdk = new Via();
+(async() => {
+  const sdk = new Via();
 
-sdk.getUsers().then((res: GetUsersResponse) => {
+  const res = await sdk.getUsers();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 <!-- End SDK Example Usage -->
 

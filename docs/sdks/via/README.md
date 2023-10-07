@@ -17,15 +17,16 @@ Optional extended description in CommonMark or HTML.
 
 ```typescript
 import { Via } from "via";
-import { GetUsersResponse } from "via/dist/sdk/models/operations";
 
-const sdk = new Via();
+(async() => {
+  const sdk = new Via();
 
-sdk.via.getUsers().then((res: GetUsersResponse) => {
+  const res = await sdk.via.getUsers();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
