@@ -28,5 +28,5 @@ export class GetUsersResponse extends SpeakeasyBase {
      * A JSON array of user names
      */
     @SpeakeasyMetadata()
-    getUsers200ApplicationJSONStrings?: string[];
+    strings?: string[];
 }

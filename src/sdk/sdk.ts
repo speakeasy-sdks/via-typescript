@@ -3,8 +3,8 @@
  */
 
 import * as utils from "../internal/utils";
-import * as errors from "./models/errors";
-import * as operations from "./models/operations";
+import * as errors from "../sdk/models/errors";
+import * as operations from "../sdk/models/operations";
 import axios from "axios";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -52,9 +52,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "0.1.9";
-    sdkVersion = "0.6.0";
-    genVersion = "2.171.0";
-    userAgent = "speakeasy-sdk/typescript 0.6.0 2.171.0 0.1.9 via";
+    sdkVersion = "0.7.0";
+    genVersion = "2.181.1";
+    userAgent = "speakeasy-sdk/typescript 0.7.0 2.181.1 0.1.9 via";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -125,9 +125,7 @@ export class Via {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getUsers200ApplicationJSONStrings = utils.objectToClass(
-                        JSON.parse(decodedRes)
-                    );
+                    res.strings = utils.objectToClass(JSON.parse(decodedRes));
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
