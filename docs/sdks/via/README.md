@@ -23,7 +23,6 @@ import { Via } from "via";
 
   const res = await sdk.getUsers();
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -39,5 +38,9 @@ import { Via } from "via";
 
 ### Response
 
-**Promise<[operations.GetUsersResponse](../../models/operations/getusersresponse.md)>**
+**Promise<[operations.GetUsersResponse](../../sdk/models/operations/getusersresponse.md)>**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
