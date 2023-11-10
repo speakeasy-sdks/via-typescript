@@ -52,9 +52,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "0.1.9";
-    sdkVersion = "0.7.1";
-    genVersion = "2.185.0";
-    userAgent = "speakeasy-sdk/typescript 0.7.1 2.185.0 0.1.9 via";
+    sdkVersion = "0.7.2";
+    genVersion = "2.187.7";
+    userAgent = "speakeasy-sdk/typescript 0.7.2 2.187.7 0.1.9 via";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -110,7 +110,7 @@ export class Via {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -118,17 +118,17 @@ export class Via {
 
         const res: operations.GetUsersResponse = new operations.GetUsersResponse({
             statusCode: httpRes.status,
-            contentType: contentType,
+            contentType: responseContentType,
             rawResponse: httpRes,
         });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.strings = utils.objectToClass(JSON.parse(decodedRes));
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
