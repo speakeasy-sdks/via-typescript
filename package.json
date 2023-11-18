@@ -1,6 +1,6 @@
 {
   "name": "via",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "author": "TaylorTest",
   "scripts": {
     "prepare": "tsc --build",
