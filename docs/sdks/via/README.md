@@ -18,7 +18,7 @@ Optional extended description in CommonMark or HTML.
 ```typescript
 import { Via } from "via";
 
-(async() => {
+async function run() {
   const sdk = new Via();
 
   const res = await sdk.getUsers();
@@ -26,7 +26,9 @@ import { Via } from "via";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
