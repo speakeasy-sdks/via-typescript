@@ -1,0 +1,44 @@
+lockVersion: 2.0.0
+id: 972d2bb8-432f-4896-a40b-bcc993f4745c
+management:
+  docChecksum: 91bc040283e6b1febc5304391c2c1cc2
+  docVersion: 0.1.9
+  speakeasyVersion: internal
+  generationVersion: 2.225.2
+  releaseVersion: 0.8.1
+  configChecksum: 6929b2d2b192092a855d382a86207118
+  repoURL: https://github.com/speakeasy-sdks/via-typescript.git
+  repoSubDirectory: .
+  installationURL: https://github.com/speakeasy-sdks/via-typescript
+features:
+  typescript:
+    core: 3.4.1
+    globalServerURLs: 2.82.1
+generatedFiles:
+  - src/sdk/sdk.ts
+  - .eslintrc.yml
+  - jest.config.js
+  - package-lock.json
+  - package.json
+  - src/index.ts
+  - src/internal/utils/contenttype.ts
+  - src/internal/utils/headers.ts
+  - src/internal/utils/index.ts
+  - src/internal/utils/pathparams.ts
+  - src/internal/utils/queryparams.ts
+  - src/internal/utils/requestbody.ts
+  - src/internal/utils/retries.ts
+  - src/internal/utils/security.ts
+  - src/internal/utils/utils.ts
+  - src/sdk/index.ts
+  - src/sdk/models/errors/sdkerror.ts
+  - src/sdk/types/index.ts
+  - src/sdk/types/rfcdate.ts
+  - tsconfig.json
+  - src/sdk/models/operations/getusers.ts
+  - src/sdk/models/errors/index.ts
+  - src/sdk/models/operations/index.ts
+  - docs/sdk/models/operations/getusersresponse.md
+  - docs/sdks/via/README.md
+  - USAGE.md
+  - .gitattributes

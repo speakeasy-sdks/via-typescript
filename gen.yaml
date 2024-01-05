@@ -1,21 +1,10 @@
-configVersion: 1.0.0
-management:
-  docChecksum: 91bc040283e6b1febc5304391c2c1cc2
-  docVersion: 0.1.9
-  speakeasyVersion: 1.127.0
-  generationVersion: 2.220.0
+configVersion: 2.0.0
 generation:
-  comments: {}
   sdkClassName: via
-  repoURL: https://github.com/speakeasy-sdks/via-typescript.git
   usageSnippets:
     optionalPropertyRendering: withExample
   fixes:
     nameResolutionDec2023: false
-features:
-  typescript:
-    core: 3.3.9
-    globalServerURLs: 2.82.1
 typescript:
   version: 0.8.1
   author: TaylorTest
@@ -30,9 +19,7 @@ typescript:
       shared: sdk/models/shared
       webhooks: sdk/models/webhooks
   inputModelSuffix: input
-  installationURL: https://github.com/speakeasy-sdks/via-typescript
   maxMethodParams: 0
   outputModelSuffix: output
   packageName: via
-  repoSubDirectory: .
   templateVersion: v1
